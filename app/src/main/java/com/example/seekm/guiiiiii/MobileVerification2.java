@@ -57,6 +57,7 @@ public class MobileVerification2 extends AppCompatActivity { ;
 
         //locking orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     }
 
     void startNewActivity(Activity one, Class two){

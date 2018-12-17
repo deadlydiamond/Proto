@@ -50,7 +50,7 @@ public class MobileVerification1 extends AppCompatActivity {
         mNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startNewActivity(MobileVerification1.this,MobileVerification2.class);
+                startNewActivity(MobileVerification1.this,EnterNumber.class);
             }
         });
 
