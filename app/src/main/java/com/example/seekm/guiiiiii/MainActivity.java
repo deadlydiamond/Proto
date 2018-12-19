@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent i=new Intent(MainActivity.this,MobileVerification1.class);
+                Intent i=new Intent(MainActivity.this,OnBoarding_1.class);
                 startActivity(i);
             }
         }, 3000);

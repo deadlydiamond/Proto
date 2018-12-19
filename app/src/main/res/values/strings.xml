@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TuTrack</string>
+    <integer-array name="img_id_arr">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.seekm.guiiiiii;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.Image;
@@ -12,6 +13,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,7 +35,7 @@ public class EnterNumber extends AppCompatActivity {
 
         //changing status bar color dynamically
         Window window = getWindow();
-        //making button float
+//        //making button float
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         if (Build.VERSION.SDK_INT >=21)
             window.setStatusBarColor(getResources().getColor(R.color.colorAccent));

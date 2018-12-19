@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 public class ForgotPassword extends AppCompatActivity {
@@ -23,6 +24,9 @@ public class ForgotPassword extends AppCompatActivity {
 
         //changing status bar color dynamically
         Window window = getWindow();
+        //making button float
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
         if (Build.VERSION.SDK_INT >=21)
             window.setStatusBarColor(getResources().getColor(R.color.colorAccent));
 
