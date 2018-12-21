@@ -32,7 +32,7 @@ public class Social extends AppCompatActivity {
         //changing status bar color dynamically
         Window window = getWindow();
         if (Build.VERSION.SDK_INT >=21)
-            window.setStatusBarColor(getResources().getColor(R.color.colorSocial));
+            window.setStatusBarColor(getResources().getColor(R.color.colorAccent));
 
         //locking orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

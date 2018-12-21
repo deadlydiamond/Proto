@@ -21,6 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="20dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:clickable="true"
         android:src="@drawable/ic_back"
         android:tint="#fff"/>
@@ -33,8 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:dotsColor="#fff"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="12dp"
+        app:dotsCornerRadius="6dp"
+        app:dotsSize="8dp"
         app:dotsSpacing="4dp"
         app:dotsWidthFactor="2.5"
         />

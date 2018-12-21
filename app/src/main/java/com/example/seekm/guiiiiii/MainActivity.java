@@ -1,33 +1,43 @@
 package com.example.seekm.guiiiiii;
 
+import android.Manifest;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.os.Handler;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.WindowManager;
+import android.widget.VideoView;
+
+import com.example.seekm.guiiiiii.MobileVerification1;
 
 public class MainActivity extends AppCompatActivity {
-
+    VideoView videoView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        nextActivity();
+//        getSupportActionBar().hide();
 
-        //locking orientation
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-    }
+        videoView= (VideoView) findViewById(R.id.videoView);
 
-    void nextActivity(){
-        //Activity delay function
-        new Handler().postDelayed(new Runnable() {
+        Uri video = Uri.parse("android.resource://" + getPackageName() +"/"+ R.raw.video);
+        videoView.setVideoURI(video);
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void run() {
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                if(isFinishing())
+                    return;
 
-                Intent i=new Intent(MainActivity.this,OnBoarding_1.class);
-                startActivity(i);
+                Intent intent = new Intent(MainActivity.this,MobileVerification1.class);
+                startActivity(intent);
+                finish();
             }
-        }, 3000);
+        });
+        videoView.start();
     }
 }
-

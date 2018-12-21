@@ -42,7 +42,7 @@ Start by filling out the required information and
 wait for the student's request"
         android:textAlignment="center"
         android:textColor="#fff"
-        android:textSize="16sp"
+        android:textSize="14sp"
 
         />
 

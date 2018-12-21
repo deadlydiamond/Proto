@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -31,6 +32,7 @@ public class MobileVerification2 extends AppCompatActivity { ;
     //VARS
     ImageView mBack;
     TextView mTrouble;
+    FloatingActionButton mFloat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,14 @@ public class MobileVerification2 extends AppCompatActivity { ;
 
         //locking orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        mFloat = (FloatingActionButton)findViewById(R.id.floatingActionButton2);
+        mFloat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startNewActivity(MobileVerification2.this,SignupForm.class);
+            }
+        });
 
     }
 

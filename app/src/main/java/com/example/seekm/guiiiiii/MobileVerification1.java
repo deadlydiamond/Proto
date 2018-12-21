@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -37,13 +38,14 @@ public class MobileVerification1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobile_verification1);
 
-        //changing status bar color dynamically
+
+        //locking orientation
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         Window window = getWindow();
         if (Build.VERSION.SDK_INT >=21)
             window.setStatusBarColor(getResources().getColor(R.color.colorAccent));
 
-        //locking orientation
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Views
         mNumber = (EditText)findViewById(R.id.number);

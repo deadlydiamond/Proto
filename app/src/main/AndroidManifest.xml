@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.seekm.guiiiiii">
 
+    //Permission for Maps
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:fitsSystemWindows="true"
@@ -12,23 +17,34 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".ProfileBuilding">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Social" />
         <activity android:name=".MobileVerification1" />
         <activity android:name=".MobileVerification2" />
+        <activity android:name=".SignupForm" />
+        <activity android:name=".ProfileBuilding" />
         <activity android:name=".Home" />
-        <activity android:name=".Social" />
         <activity android:name=".Trouble" />
         <activity android:name=".SigninWithPassword" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".EnterNumber" />
         <activity android:name=".OnBoarding_1" />
+        <activity android:name=".DocSubmission"/>
+        <activity android:name=".MapsActivity"/>
+        <activity android:name=".Result"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/api_key" />
     </application>
 
 </manifest>
