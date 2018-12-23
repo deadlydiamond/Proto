@@ -47,12 +47,6 @@ public class SliderAdapter extends PagerAdapter {
     };
 
 
-    public int[] slide_dots = {
-            R.drawable.dot_1,
-            R.drawable.dot_2,
-            R.drawable.dot_3
-    };
-
     @Override
     public int getCount() {
         return slide_headings.length;

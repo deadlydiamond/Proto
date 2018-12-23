@@ -2,11 +2,14 @@ package com.example.seekm.guiiiiii;
 
 import android.*;
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
+import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -71,6 +74,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
         mMap = googleMap;
+
+        if (latitude==0.0f && longitude==0.0f){
+            mSearchText.setError("Location can't be empty");
+        }
 
         if (mLocationPermissionsGranted) {
             getDeviceLocation();
@@ -191,7 +198,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     if (longitude!=0.0d && latitude!=0.0d) {
                         Log.d(TAG, "global lat and long: " + latitude);
 
-                        Intent intent = new Intent(MapsActivity.this, Result.class);
+                        Intent intent = new Intent(MapsActivity.this, ProfileCompleted.class);
                         String longitudeStr, latitudeStr;
                         latitudeStr = String.valueOf(latitude);
                         longitudeStr = String.valueOf(longitude);
@@ -239,11 +246,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
                             Log.d(TAG, "onComplete: found location!");
-                            Location currentLocation = (Location) task.getResult();
-                            latitude = currentLocation.getLatitude();
-                            longitude = currentLocation.getLongitude();
-                            moveCameraToMyLocation(new LatLng(latitude, longitude),
-                                    DEFAULT_ZOOM);
+                            try{
+                                Location currentLocation = (Location) task.getResult();
+                                latitude = currentLocation.getLatitude();
+                                longitude = currentLocation.getLongitude();
+                                moveCameraToMyLocation(new LatLng(latitude, longitude),
+                                        DEFAULT_ZOOM);
+                            }catch (NullPointerException err){
+                                Log.d(TAG, "onComplete: Null pointer exception in maps activity " + err.getMessage());
+                            }
 
                         } else {
                             Log.d(TAG, "onComplete: current location is null");
@@ -257,7 +268,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
         }
     }
-
     private void moveCameraToMyLocation(LatLng latLng, float zoom) {
         mMap.clear();
         mSearchText.setText("");

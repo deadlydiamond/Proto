@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.seekm.guiiiiii">
-
     //Permission for Maps
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -15,8 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:windowSoftInputMode="adjustResize">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,16 +33,23 @@
         <activity android:name=".ForgotPassword" />
         <activity android:name=".EnterNumber" />
         <activity android:name=".OnBoarding_1" />
-        <activity android:name=".DocSubmission"/>
-        <activity android:name=".MapsActivity"/>
-        <activity android:name=".Result"/>
+        <activity android:name=".DocSubmission" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".Result" />
 
+        //add for GMAPS
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/api_key" />
+
+        <activity android:name=".ProfileCompleted" />
+        <activity
+            android:name=".Drawer"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

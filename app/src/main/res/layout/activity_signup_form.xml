@@ -297,12 +297,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/editText13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editText13"
-        app:srcCompat="@drawable/ic_person" />10sp"
-        app:
-        nstraintEnd_toEndOf="parent"
-        app:l
-        straintHorizontal_bias="0.0"
-        app:layo
-        aintStart_toStartOf="parent"
-        app:layout_const />
+        app:srcCompat="@drawable/ic_person" />
+
 </android.support.constraint.ConstraintLayout>
